@@ -20,7 +20,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://rakeshmohantarai-shopify-backend-e.onrender.com/allproducts')
       .then((response) => response.json())
       .then((data) => setAll_Product(data))
   }, [])
@@ -31,7 +31,7 @@ const ShopContextProvider = (props) => {
       const newCart = { ...prevCart };
       newCart[itemId] = (newCart[itemId] || 0) + 1;
       if (localStorage.getItem('auth-token')) {
-        fetch('http://localhost:4000/addtocart', {
+        fetch('https://rakeshmohantarai-shopify-backend-e.onrender.com/addtocart', {
           method: 'POST',
           headers: {
             Accept: 'application/form-data',
@@ -73,7 +73,7 @@ const ShopContextProvider = (props) => {
       ...prev, [itemId]: prev[itemId] - 1
     }));
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/removefromcart', {
+      fetch('https://rakeshmohantarai-shopify-backend-e.onrender.com/removefromcart', {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
