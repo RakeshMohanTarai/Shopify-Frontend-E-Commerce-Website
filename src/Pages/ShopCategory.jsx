@@ -13,7 +13,7 @@ export const ShopCategory = (props) => {
 
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://rakeshmohantarai-shopify-backend-e.onrender.com/allproducts')
       .then((response) => response.json())
       .then((data) => {
         setAll_Products(data);
