@@ -98,7 +98,7 @@ export const SignUp = () => {
         return;
       }
   
-      const response = await fetch('http://localhost:4000/signup', {
+      const response = await fetch('https://rakeshmohantarai-shopify-backend-e.onrender.com/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
